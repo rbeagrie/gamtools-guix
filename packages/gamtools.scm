@@ -98,3 +98,5 @@
     (description
       "A package containing some utilities for analyzing GAM data.")
     (license license:expat)))
+
+python-gamtools
