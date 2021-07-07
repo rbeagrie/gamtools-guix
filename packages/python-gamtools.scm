@@ -9,6 +9,7 @@
 (use-modules (gnu packages sphinx))
 (use-modules (gnu packages xml))
 (use-modules (gnu packages maths))
+(use-modules (gnu packages bioinformatics))
 (use-modules (guix build-system python))
 (use-modules (gnu packages python-xyz))
 (use-modules (gnu packages python-science))
@@ -75,14 +76,14 @@
 (define-public python-gamtools
   (package
     (name "python-gamtools")
-    (version "1.1.1a2")
+    (version "2.0.0a5")
     (source
       (origin
         (method url-fetch)
         (uri (string-append "http://rob.beagrie.com/media/gamtools-" version ".tar.gz"))
         (sha256
           (base32
-            "14qfy1w5hqdjjdajgvz9q88jrcka9v74662y5glwgbqaq2d2r505"))))
+            "02m296mwyxnlyfak3xg3q10lqw74c7lkaxvjk4019w738i3bdckf"))))
     (build-system python-build-system)
     (propagated-inputs
       `(("python-cython" ,python-cython)
@@ -91,12 +92,17 @@
         ("python-pytest" ,python-pytest)
         ("python-scipy" ,python-scipy)
         ("python-wrapit" ,python-wrapit)
+        ("samtools" ,samtools)
+        ("bowtie" ,bowtie)
+        ("bedtools" ,bedtools)
+        ("fastqc" ,fastqc)
+        ("kentutils" ,kentutils)
         ("gsl" ,gsl)))
     (home-page "http://gam.tools")
     (synopsis
       "A package containing some utilities for analyzing GAM data.")
     (description
       "A package containing some utilities for analyzing GAM data.")
-    (license license:expat)))
+    (license #f)))
 
 python-gamtools
