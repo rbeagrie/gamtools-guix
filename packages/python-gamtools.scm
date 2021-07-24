@@ -74,9 +74,42 @@
      "A task loader for doit that supports argparse console scripts")
     (license license:expat)))
 
-(define-public python-gamtools
+(package
+  (name "python-gamtools")
+  (version "1.1.1")
+  (source
+    (origin
+      (method url-fetch)
+      (uri (pypi-uri "gamtools" version))
+      (sha256
+        (base32
+          "0zmcpld21zgik0fn52ydaa9wgagdgqrd8y8ps781393iq075rhjh"))))
+  (build-system python-build-system)
+  (propagated-inputs
+    `(("python-cython" ,python-cython)
+      ("python-numpy" ,python-numpy)
+      ("python-pandas" ,python-pandas)
+      ("python-pytest" ,python-pytest)
+      ("python-scipy" ,python-scipy)
+      ("python-wrapit" ,python-wrapit)))
+  (inputs
+    `(("samtools" ,samtools)
+       ("bowtie" ,bowtie)
+       ("bedtools" ,bedtools)
+       ("fastqc" ,fastqc)
+       ("kentutils" ,kentutils)
+       ("gsl" ,gsl)))
+  (home-page "http://gam.tools")
+  (synopsis
+    "A package containing some utilities for analyzing GAM data.")
+  (description
+    "A package containing some utilities for analyzing GAM data.")
+  (license #f))
+
+(define-public python-gamtools-testing
   (package
-    (name "python-gamtools")
+    (inherit python-gamtools)
+    (name "python-gamtools-testing")
     (version "2.0.0a5")
     (source
      (origin
@@ -85,23 +118,4 @@
        (sha256
         (base32
          "02m296mwyxnlyfak3xg3q10lqw74c7lkaxvjk4019w738i3bdckf"))))
-    (build-system python-build-system)
-    (propagated-inputs
-     `(("python-cython" ,python-cython)
-       ("python-numpy" ,python-numpy)
-       ("python-pandas" ,python-pandas)
-       ("python-pytest" ,python-pytest)
-       ("python-scipy" ,python-scipy)
-       ("python-wrapit" ,python-wrapit)
-       ("samtools" ,samtools)
-       ("bowtie" ,bowtie)
-       ("bedtools" ,bedtools)
-       ("fastqc" ,fastqc)
-       ("kentutils" ,kentutils)
-       ("gsl" ,gsl)))
-    (home-page "http://gam.tools")
-    (synopsis
-     "A package containing some utilities for analyzing GAM data.")
-    (description
-     "A package containing some utilities for analyzing GAM data.")
-    (license #f)))
+   ))
