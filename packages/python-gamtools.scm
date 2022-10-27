@@ -77,14 +77,14 @@
 (define-public python-gamtools
   (package
     (name "python-gamtools")
-    (version "2.0.0a5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
-       (uri (string-append "http://rob.beagrie.com/media/gamtools-" version ".tar.gz"))
+       (uri (pypi-uri "gamtools" version))
        (sha256
         (base32
-         "02m296mwyxnlyfak3xg3q10lqw74c7lkaxvjk4019w738i3bdckf"))))
+         "0fdlhgzlsxaa95fgmkabfs7b3z5xr09bsfihsknp94wc4j1bfydz"))))
     (build-system python-build-system)
     (propagated-inputs
      `(("python-cython" ,python-cython)
@@ -97,8 +97,7 @@
        ("bowtie" ,bowtie)
        ("bedtools" ,bedtools)
        ("fastqc" ,fastqc)
-       ("kentutils" ,kentutils)
-       ("gsl" ,gsl)))
+       ("kentutils" ,kentutils)))
     (home-page "http://gam.tools")
     (synopsis
      "A package containing some utilities for analyzing GAM data.")
