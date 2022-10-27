@@ -92,8 +92,9 @@
        ("python-pandas" ,python-pandas)
        ("python-pytest" ,python-pytest)
        ("python-scipy" ,python-scipy)
-       ("python-wrapit" ,python-wrapit)
-       ("samtools" ,samtools)
+       ("python-wrapit" ,python-wrapit)))
+    (inputs
+     `(("samtools" ,samtools)
        ("bowtie" ,bowtie)
        ("bedtools" ,bedtools)
        ("fastqc" ,fastqc)
