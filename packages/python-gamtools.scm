@@ -76,14 +76,14 @@
 
 (package
   (name "python-gamtools")
-  (version "1.1.1")
+  (version "2.0.0")
   (source
     (origin
       (method url-fetch)
       (uri (pypi-uri "gamtools" version))
       (sha256
         (base32
-          "0zmcpld21zgik0fn52ydaa9wgagdgqrd8y8ps781393iq075rhjh"))))
+          "0fdlhgzlsxaa95fgmkabfs7b3z5xr09bsfihsknp94wc4j1bfydz"))))
   (build-system python-build-system)
   (propagated-inputs
     `(("python-cython" ,python-cython)
@@ -97,8 +97,7 @@
        ("bowtie" ,bowtie)
        ("bedtools" ,bedtools)
        ("fastqc" ,fastqc)
-       ("kentutils" ,kentutils)
-       ("gsl" ,gsl)))
+       ("kentutils" ,kentutils)))
   (home-page "http://gam.tools")
   (synopsis
     "A package containing some utilities for analyzing GAM data.")
