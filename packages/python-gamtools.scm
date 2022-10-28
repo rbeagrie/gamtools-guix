@@ -109,14 +109,14 @@
 (define-public python-gamtools-testing
   (package
     (name "python-gamtools-testing")
-    (version "2.0.0a5")
+    (version "2.0.0b1")
     (source
      (origin
        (method url-fetch)
        (uri (string-append "http://rob.beagrie.com/media/gamtools-" version ".tar.gz"))
        (sha256
         (base32
-         "02m296mwyxnlyfak3xg3q10lqw74c7lkaxvjk4019w738i3bdckf"))))
+         "1p7ym61cl7qp0qq4y3g0n624d0i36ag9c8r5pvym0irwgaj4ixsv"))))
     (build-system python-build-system)
     (propagated-inputs
      `(("python-cython" ,python-cython)
