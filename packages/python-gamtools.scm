@@ -105,3 +105,35 @@
     (description
      "A package containing some utilities for analyzing GAM data.")
     (license #f)))
+
+(define-public python-gamtools-testing
+  (package
+    (name "python-gamtools-testing")
+    (version "2.0.0a5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (string-append "http://rob.beagrie.com/media/gamtools-" version ".tar.gz"))
+       (sha256
+        (base32
+         "02m296mwyxnlyfak3xg3q10lqw74c7lkaxvjk4019w738i3bdckf"))))
+    (build-system python-build-system)
+    (propagated-inputs
+     `(("python-cython" ,python-cython)
+       ("python-numpy" ,python-numpy)
+       ("python-pandas" ,python-pandas)
+       ("python-pytest" ,python-pytest)
+       ("python-scipy" ,python-scipy)
+       ("python-wrapit" ,python-wrapit)))
+    (inputs
+     `(("samtools" ,samtools)
+       ("bowtie" ,bowtie)
+       ("bedtools" ,bedtools)
+       ("fastqc" ,fastqc)
+       ("kentutils" ,kentutils)))
+    (home-page "http://gam.tools")
+    (synopsis
+     "A package containing some utilities for analyzing GAM data.")
+    (description
+     "A package containing some utilities for analyzing GAM data.")
+    (license #f)))
